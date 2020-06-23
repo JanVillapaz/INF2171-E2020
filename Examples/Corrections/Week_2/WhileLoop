@@ -1,0 +1,20 @@
+; While loop
+
+         DECI    loops,d
+         LDA     i,d         
+here:    CPA     loops,d
+         BRGE    done
+         STRO    it,d 
+         ADDA    1,i
+         STA     i,d
+         DECO    i,d
+         CHARO   '\n',i
+         BR      here
+
+
+
+done:    STOP
+it:      .ASCII  "Iteration \x00"
+loops:   .BLOCK  2
+i:       .BLOCK  2
+         .END
