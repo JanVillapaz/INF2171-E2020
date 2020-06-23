@@ -1,0 +1,16 @@
+; Prints < 10 if less than 10 or >= if greater or equal to 10
+
+         LDA     0,i
+         DECI    x,d
+         LDA     x,d
+         CPA     10,i
+         BRLT    less
+         STRO    ge10,d 
+         
+done:    STOP
+less:    STRO    le10,d
+
+x:       .BLOCK 2
+le10:    .ASCII  "< 10\x00"
+ge10:    .ASCII  ">= 10\x00"
+         .END
